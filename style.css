@@ -87,3 +87,74 @@ width:100%;
 height:auto;
 aspect-ratio:auto;
 object-fit:c
+
+/* FINAL GALLERY FIXES */
+
+html,
+body{
+  overflow-x:hidden;
+}
+
+.gallery{
+  width:100%;
+  display:block;
+  column-count:3;
+  column-gap:14px;
+}
+
+.photo{
+  width:100%;
+  max-width:100%;
+  display:inline-block;
+  vertical-align:top;
+  break-inside:avoid;
+  margin:0 0 14px;
+}
+
+.photo-button{
+  width:100%;
+  max-width:100%;
+  display:block;
+}
+
+.photo img{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.photo-button:hover .photo-number{
+  opacity:1;
+}
+
+.photo-number{
+  z-index:5;
+  pointer-events:none;
+}
+
+/* Keep the About section completely separate from gallery columns */
+.about{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-count:initial;
+}
+
+@media(max-width:800px){
+  .gallery{
+    column-count:2;
+    column-gap:9px;
+  }
+
+  .about{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+  .gallery{
+    column-count:2;
+  }
+}
