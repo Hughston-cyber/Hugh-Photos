@@ -49,7 +49,7 @@ h1 em{font-weight:500}
   position:relative;
   margin:0;
   overflow:hidden;
-  background:#171719;
+  background:transparent;
 }
 
 .photo-wide{grid-column:span 6}
