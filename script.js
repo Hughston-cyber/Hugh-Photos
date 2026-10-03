@@ -139,3 +139,12 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('resize', updateActiveNav);
 updateActiveNav();
+
+
+/* Page loading screen */
+const pageLoader = document.getElementById("page-loader");
+if (pageLoader) {
+  window.addEventListener("load", () => {
+    setTimeout(() => pageLoader.classList.add("loaded"), 250);
+  });
+}
