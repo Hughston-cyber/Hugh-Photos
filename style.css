@@ -169,6 +169,25 @@ h1 em { font-weight: 500; }
 }
 .photo-button:hover .photo-number { opacity: 1; transform: translateY(0); }
 
+.photo-button::after {
+  content: "View image";
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 5;
+  pointer-events: none;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s, transform .25s;
+  text-shadow: 0 2px 8px #000;
+}
+.photo-button:hover::after { opacity: 1; transform: translateY(0); }
+
 /* ABOUT */
 .about {
   width: 100%; max-width: none; margin: 0;
@@ -235,7 +254,8 @@ footer { width: 100%; border-top: 1px solid var(--line); padding: 28px clamp(24p
   .intro h2 { font-size: clamp(38px,12vw,58px); }
   .gallery { column-count: 2; column-gap: 7px; padding-left: 10px; padding-right: 10px; padding-bottom: 90px; }
   .photo { margin-bottom: 7px; }
-  .photo-number { left: 10px; bottom: 9px; font-size: 9px; max-width: calc(100% - 20px); }
+  .photo-number { left: 10px; bottom: 9px; font-size: 9px; max-width: calc(100% - 85px); }
+  .photo-button::after { right: 10px; bottom: 9px; font-size: 8px; }
   .about-image { height: 50vh; min-height: 350px; }
   .about-copy { padding: 60px 25px; }
   .contact { padding: 90px 20px; }
