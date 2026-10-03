@@ -688,7 +688,7 @@ footer {
   z-index: 0;
   width: 96%;
   height: 96%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
