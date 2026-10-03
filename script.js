@@ -1,4 +1,4 @@
-]const lightbox = document.getElementById("lightbox");
+const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxYear = document.getElementById("lightbox-year");
@@ -19,13 +19,20 @@ photoButtons.forEach((button) => {
 
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
   });
 });
 
 function closeLightbox() {
   lightbox.classList.remove("open");
   lightbox.setAttribute("aria-hidden", "true");
-  lightboxImage.src = "";
+
+  document.body.style.overflow = "";
+
+  setTimeout(() => {
+    lightboxImage.src = "";
+  }, 200);
 }
 
 closeButton.addEventListener("click", closeLightbox);
@@ -37,7 +44,7 @@ lightbox.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
+  if (event.key === "Escape" && lightbox.classList.contains("open")) {
     closeLightbox();
   }
 });
