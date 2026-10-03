@@ -96,7 +96,7 @@ h1 em { font-weight: 500; }
 .photo { position:relative; width:100%; display:inline-block; vertical-align:top; margin:0 0 18px; overflow:hidden; background:transparent; break-inside:avoid; }
 .photo-wide,.photo-tall { width:100%; }
 .photo-button { appearance:none; border:0; padding:0; margin:0; background:none; display:block; position:relative; width:100%; cursor:zoom-in; overflow:hidden; transition:opacity .3s ease; }
-.photo img { width:100%; height:auto; display:block; transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s; }
+.photo img { width:100%; height:auto; display:block; transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .45s ease; }
 .photo-wide img,.photo-tall img { width:100%; height:auto; aspect-ratio:auto; object-fit:cover; }
 .photo:hover img { transform:scale(1.035); filter:brightness(.78); }
 .photo-button:active { opacity:.9; }
@@ -185,6 +185,21 @@ footer { width:100%; border-top:1px solid var(--line); padding:28px clamp(24px,5
 .error-content h1 { font-size:clamp(58px,9vw,110px); margin-bottom:25px; }
 .error-content > p:not(.eyebrow) { color:#ddd; font-size:15px; line-height:1.7; margin:0 auto 32px; }
 
+
+/* PREMIUM PHOTO HOVER */
+.photo-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.5) 100%);
+  opacity: 0;
+  transition: opacity .45s ease;
+  pointer-events: none;
+}
+.photo-button:hover::before {
+  opacity: 1;
+}
 
 /* SUBTLE FADE-IN */
 .reveal {
