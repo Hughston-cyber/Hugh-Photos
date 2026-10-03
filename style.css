@@ -88,6 +88,16 @@ h1 em { font-weight: 500; }
 .button span { font-size: 17px; line-height: 0; }
 
 /* INTRO */
+.intro, .gallery, .about, .contact, footer {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.intro.is-visible, .gallery.is-visible, .about.is-visible, .contact.is-visible, footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .intro {
   max-width: var(--max);
   margin: 0 auto;
