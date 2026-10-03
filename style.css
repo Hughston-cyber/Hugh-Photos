@@ -469,6 +469,9 @@ footer {
   letter-spacing: 0.12em;
   line-height: 1.7;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 #lightbox-info p {
@@ -478,9 +481,10 @@ footer {
 
 #lightbox-info #lightbox-caption {
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 4px;
+  line-height: 1.4;
+  margin-bottom: 6px;
 }
 
 .lightbox-close {
