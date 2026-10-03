@@ -90,8 +90,9 @@ h1 em { font-weight: 500; }
 /* INTRO */
 .intro, .gallery, .about, .contact, footer {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(55px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
 }
 .intro.is-visible, .gallery.is-visible, .about.is-visible, .contact.is-visible, footer.is-visible {
   opacity: 1;
@@ -288,3 +289,12 @@ footer { width: 100%; border-top: 1px solid var(--line); padding: 28px clamp(24p
 .error-content { position: relative; z-index: 2; width: 100%; max-width: 700px; transform: translateY(-20px); }
 .error-content h1 { font-size: clamp(58px,9vw,110px); margin-bottom: 25px; }
 .error-content > p:not(.eyebrow) { color: #ddd; font-size: 15px; line-height: 1.7; margin: 0 auto 32px; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .intro, .gallery, .about, .contact, footer {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
