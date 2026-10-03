@@ -92,3 +92,30 @@ const fadeObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
 
 revealItems.forEach((item) => fadeObserver.observe(item));
+
+
+/* Highlight the section currently in view */
+const navLinks = Array.from(document.querySelectorAll('nav a'));
+const navSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+const navObserver = new IntersectionObserver((entries) => {
+  const visible = entries
+    .filter((entry) => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+  if (!visible.length) return;
+
+  navLinks.forEach((link) => {
+    link.classList.toggle(
+      'active',
+      link.getAttribute('href') === '#' + visible[0].target.id
+    );
+  });
+}, {
+  threshold: [0.15, 0.35, 0.6],
+  rootMargin: '-20% 0px -55% 0px'
+});
+
+navSections.forEach((section) => navObserver.observe(section));
