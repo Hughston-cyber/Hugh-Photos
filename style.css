@@ -309,7 +309,7 @@ h1 em {
   filter: brightness(0.82);
 }
 
-/* Image number */
+/* Image title */
 
 .photo-number {
   position: absolute;
@@ -320,18 +320,27 @@ h1 em {
   pointer-events: none;
 
   color: #fff;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
 
   opacity: 0;
 
-  transition: opacity 0.25s;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
 
-  text-shadow: 0 1px 5px #000;
+  transform: translateY(6px);
+
+  text-shadow: 0 2px 8px #000;
+
+  max-width: calc(100% - 32px);
 }
 
 .photo-button:hover .photo-number {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
