@@ -17,8 +17,11 @@ function showPhoto(index) {
   const caption = button.dataset.caption;
   const year = button.dataset.year;
 
+  lightboxImage.classList.remove("lightbox-animate");
   lightboxImage.src = image;
   lightboxImage.alt = caption;
+  void lightboxImage.offsetWidth;
+  lightboxImage.classList.add("lightbox-animate");
   lightboxCaption.textContent = caption;
   lightboxYear.textContent = `Year: ${year}`;
   currentPhotoIndex = index;
