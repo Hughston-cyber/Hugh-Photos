@@ -106,6 +106,13 @@ const navSections = navLinks
 
 function updateActiveNav() {
   const marker = window.scrollY + window.innerHeight * 0.35;
+
+  // No section is active while the hero is visible.
+  if (navSections[0] && marker < navSections[0].offsetTop) {
+    navLinks.forEach((link) => link.classList.remove('active'));
+    return;
+  }
+
   let activeSection = navSections[0];
 
   navSections.forEach((section) => {
