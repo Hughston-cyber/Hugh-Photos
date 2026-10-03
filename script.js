@@ -4,18 +4,27 @@ const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxYear = document.getElementById("lightbox-year");
 const closeButton = document.querySelector(".lightbox-close");
 
-const photoButtons = document.querySelectorAll(".photo-button");
+const photoButtons = Array.from(document.querySelectorAll(".photo-button"));
+let currentPhotoIndex = -1;
 
-photoButtons.forEach((button) => {
+function showPhoto(index) {
+  if (index < 0 || index >= photoButtons.length) return;
+
+  const button = photoButtons[index];
+  const image = button.dataset.src;
+  const caption = button.dataset.caption;
+  const year = button.dataset.year;
+
+  lightboxImage.src = image;
+  lightboxImage.alt = caption;
+  lightboxCaption.textContent = caption;
+  lightboxYear.textContent = `Year: ${year}`;
+  currentPhotoIndex = index;
+}
+
+photoButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
-    const image = button.dataset.src;
-    const caption = button.dataset.caption;
-    const year = button.dataset.year;
-
-    lightboxImage.src = image;
-    lightboxImage.alt = caption;
-    lightboxCaption.textContent = caption;
-    lightboxYear.textContent = `Year: ${year}`;
+    showPhoto(index);
 
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
@@ -44,8 +53,14 @@ lightbox.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && lightbox.classList.contains("open")) {
+  if (!lightbox.classList.contains("open")) return;
+
+  if (event.key === "Escape") {
     closeLightbox();
+  } else if (event.key === "ArrowRight") {
+    showPhoto((currentPhotoIndex + 1) % photoButtons.length);
+  } else if (event.key === "ArrowLeft") {
+    showPhoto((currentPhotoIndex - 1 + photoButtons.length) % photoButtons.length);
   }
 });
 
