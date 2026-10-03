@@ -519,4 +519,241 @@ footer {
   }
 
   .hero {
-    min-hei
+    min-height: 600px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 80px;
+  }
+
+  .gallery {
+    column-count: 2;
+    column-gap: 9px;
+  }
+
+  .photo {
+    margin-bottom: 9px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 60vh;
+  }
+
+  .about-copy {
+    padding: 70px 25px;
+  }
+
+  .contact {
+    padding: 110px 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 520px) {
+
+  .site-header {
+    height: 68px;
+    padding: 0 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-mark img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .brand strong {
+    font-size: 12px;
+  }
+
+  .brand small {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+
+  nav {
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .hero {
+    margin-top: 68px;
+    height: 78vh;
+    min-height: 560px;
+  }
+
+  .hero-content {
+    left: 22px;
+    right: 22px;
+    bottom: 42px;
+  }
+
+  h1 {
+    font-size: clamp(48px, 15vw, 76px);
+  }
+
+  .hero-copy {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 22px 0;
+  }
+
+  .button {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .intro {
+    padding: 80px 22px 45px;
+  }
+
+  .intro h2 {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  .gallery {
+    column-count: 2;
+    column-gap: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 90px;
+  }
+
+  .photo {
+    margin-bottom: 7px;
+  }
+
+  .photo-number {
+    left: 10px;
+    bottom: 9px;
+    font-size: 9px;
+    max-width: calc(100% - 20px);
+  }
+
+  .about-image {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .about-copy {
+    padding: 60px 25px;
+  }
+
+  .contact {
+    padding: 90px 20px;
+  }
+
+  .contact h2 {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  footer {
+    padding: 24px 20px;
+  }
+
+  /* Lightbox on phones */
+
+  .lightbox {
+    padding: 50px 15px 100px;
+  }
+
+  .lightbox img {
+    max-width: 96vw;
+    max-height: 72vh;
+  }
+
+  #lightbox-info {
+    left: 15px;
+    right: 15px;
+    bottom: 18px;
+    font-size: 9px;
+  }
+
+  #lightbox-info #lightbox-caption {
+    font-size: 13px;
+  }
+
+  .lightbox-close {
+    right: 12px;
+    top: 8px;
+    font-size: 34px;
+  }
+}
+
+/* =========================
+   404 PAGE
+========================= */
+
+.error-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  background: #0b0b0c;
+  overflow: hidden;
+}
+
+.error-image {
+  position: absolute;
+  z-index: 0;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.error-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.error-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+  transform: translateY(-20px);
+}
+
+.error-content h1 {
+  font-size: clamp(58px, 9vw, 110px);
+  margin-bottom: 25px;
+}
+
+.error-content > p:not(.eyebrow) {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 auto 32px;
+}
