@@ -200,3 +200,28 @@ footer { width:100%; border-top:1px solid var(--line); padding:28px clamp(24px,5
     transition: none;
   }
 }
+
+
+/* ACTIVE NAVIGATION */
+nav a {
+  position: relative;
+  transition: opacity .2s, color .2s;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .25s ease;
+}
+nav a.active {
+  color: #fff;
+}
+nav a.active::after {
+  transform: scaleX(1);
+}
