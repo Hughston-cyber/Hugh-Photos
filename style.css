@@ -184,3 +184,19 @@ footer { width:100%; border-top:1px solid var(--line); padding:28px clamp(24px,5
 .error-content { position:relative; z-index:2; width:100%; max-width:700px; transform:translateY(-20px); }
 .error-content h1 { font-size:clamp(58px,9vw,110px); margin-bottom:25px; }
 .error-content > p:not(.eyebrow) { color:#ddd; font-size:15px; line-height:1.7; margin:0 auto 32px; }
+
+
+/* SUBTLE FADE-IN */
+.reveal {
+  opacity: 0;
+  transition: opacity .35s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transition: none;
+  }
+}
