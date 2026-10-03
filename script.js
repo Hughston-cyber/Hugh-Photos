@@ -75,3 +75,17 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+const revealSections = document.querySelectorAll(".intro, .gallery, .about, .contact, footer");
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+revealSections.forEach((section) => revealObserver.observe(section));
