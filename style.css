@@ -613,3 +613,10 @@ footer {
     padding: 100px 20px;
   }
 }
+
+.brand-mark img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
