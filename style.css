@@ -702,3 +702,45 @@ footer {
     font-size: 34px;
   }
 }
+
+/* =========================
+   404 PAGE
+========================= */
+
+.error-page {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  background-image: url("images/01.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.error-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.error-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.error-content h1 {
+  font-size: clamp(58px, 9vw, 110px);
+  margin-bottom: 25px;
+}
+
+.error-content > p:not(.eyebrow) {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 auto 32px;
+}
