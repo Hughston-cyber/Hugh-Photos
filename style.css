@@ -1,3 +1,4 @@
+```css
 * {
   box-sizing: border-box;
 }
@@ -731,6 +732,7 @@ footer {
   position: relative;
   z-index: 1;
   max-width: 700px;
+  transform: translateY(-20px);
 }
 
 .error-content h1 {
@@ -744,3 +746,4 @@ footer {
   line-height: 1.7;
   margin: 0 auto 32px;
 }
+```
