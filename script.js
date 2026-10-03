@@ -181,3 +181,15 @@ if (menuToggle && siteNav) {
     });
   });
 }
+
+
+/* Blur-to-sharp gallery image loading */
+document.querySelectorAll(".photo img").forEach((image) => {
+  const revealImage = () => image.classList.add("is-loaded");
+
+  if (image.complete && image.naturalWidth > 0) {
+    revealImage();
+  } else {
+    image.addEventListener("load", revealImage, { once: true });
+  }
+});
