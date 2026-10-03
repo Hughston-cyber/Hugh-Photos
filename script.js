@@ -151,3 +151,10 @@ if (pageLoader) {
     setTimeout(() => pageLoader.classList.add("loaded"), 250);
   });
 }
+
+
+/* Keep the gallery count automatic */
+const photoCount = document.getElementById("photo-count");
+if (photoCount) {
+  photoCount.textContent = photoButtons.length;
+}
