@@ -246,7 +246,6 @@ h1 em {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 clamp(16px, 2.5vw, 40px) 130px;
-
   column-count: 3;
   column-gap: 14px;
 }
@@ -274,13 +273,10 @@ h1 em {
   padding: 0;
   margin: 0;
   background: none;
-
   display: block;
   position: relative;
-
   width: 100%;
   max-width: 100%;
-
   cursor: zoom-in;
   overflow: hidden;
 }
@@ -290,7 +286,6 @@ h1 em {
   max-width: 100%;
   height: auto;
   display: block;
-
   transition:
     transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
     filter 0.4s;
@@ -315,26 +310,19 @@ h1 em {
   position: absolute;
   left: 16px;
   bottom: 14px;
-
   z-index: 5;
   pointer-events: none;
-
   color: #fff;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.4;
-
   opacity: 0;
-
   transition:
     opacity 0.25s,
     transform 0.25s;
-
   transform: translateY(6px);
-
   text-shadow: 0 2px 8px #000;
-
   max-width: calc(100% - 32px);
 }
 
@@ -351,12 +339,9 @@ h1 em {
   width: 100%;
   max-width: none;
   margin: 0;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   background: var(--surface);
-
   min-height: 650px;
 }
 
@@ -377,9 +362,7 @@ h1 em {
 .about-copy {
   width: 100%;
   min-width: 0;
-
   padding: clamp(50px, 8vw, 120px);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -412,19 +395,15 @@ h1 em {
 .contact {
   width: 100%;
   max-width: 900px;
-
   margin-left: auto;
   margin-right: auto;
-
   text-align: center;
-
   padding: 150px 24px;
 }
 
 .contact h2 {
   max-width: 760px;
   margin: 0 auto 25px;
-
   font-size: clamp(40px, 6vw, 78px);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -443,17 +422,12 @@ h1 em {
 
 footer {
   width: 100%;
-
   border-top: 1px solid var(--line);
-
   padding: 28px clamp(24px, 5vw, 72px);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   color: #777;
-
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -466,15 +440,11 @@ footer {
 .lightbox {
   position: fixed;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.95);
-
   z-index: 50;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   padding: 60px 25px;
 }
 
@@ -488,31 +458,40 @@ footer {
   object-fit: contain;
 }
 
-.lightbox p {
+/* Photo information */
+
+#lightbox-info {
   position: absolute;
   left: 25px;
   bottom: 20px;
-
   color: #aaa;
-
   font-size: 11px;
   letter-spacing: 0.12em;
+  line-height: 1.7;
   text-transform: uppercase;
+}
+
+#lightbox-info p {
+  position: static;
+  margin: 0;
+}
+
+#lightbox-info #lightbox-caption {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .lightbox-close {
   position: absolute;
   right: 22px;
   top: 14px;
-
   background: none;
   border: 0;
-
   color: #fff;
-
   font-size: 40px;
   font-weight: 200;
-
   cursor: pointer;
 }
 
