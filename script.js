@@ -3,6 +3,8 @@ const lightboxImage = document.getElementById("lightbox-image");
 const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxYear = document.getElementById("lightbox-year");
 const closeButton = document.querySelector(".lightbox-close");
+const previousButton = document.querySelector(".lightbox-prev");
+const nextButton = document.querySelector(".lightbox-next");
 
 const photoButtons = Array.from(document.querySelectorAll(".photo-button"));
 let currentPhotoIndex = -1;
@@ -45,6 +47,14 @@ function closeLightbox() {
 }
 
 closeButton.addEventListener("click", closeLightbox);
+
+previousButton.addEventListener("click", () => {
+  showPhoto((currentPhotoIndex - 1 + photoButtons.length) % photoButtons.length);
+});
+
+nextButton.addEventListener("click", () => {
+  showPhoto((currentPhotoIndex + 1) % photoButtons.length);
+});
 
 lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) {
