@@ -429,3 +429,26 @@ nav a.active::after {
     transition: none;
   }
 }
+
+
+/* IMAGE LOAD POLISH */
+.photo img {
+  filter: blur(10px);
+  transform: scale(1.02);
+  transition: filter .55s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.photo img.is-loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+.photo:hover img.is-loaded {
+  transform: scale(1.035);
+  filter: brightness(.78);
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo img {
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
