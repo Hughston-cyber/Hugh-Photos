@@ -294,18 +294,21 @@ nav a.active::after {
 }
 
 
+
+
 /* LIGHTBOX OPEN/CLOSE ANIMATION */
 .lightbox {
   opacity: 0;
-  transition: opacity .35s ease;
+  transition: opacity .45s ease;
 }
 .lightbox.open {
   opacity: 1;
 }
 .lightbox img {
-  transform: scale(.94);
+  transform: scale(.96);
   opacity: 0;
-  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+  transition: transform .6s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+  will-change: transform, opacity;
 }
 .lightbox.open img {
   transform: scale(1);
@@ -315,7 +318,7 @@ nav a.active::after {
 .lightbox-nav,
 #lightbox-info {
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity .4s ease .12s;
 }
 .lightbox.open .lightbox-close,
 .lightbox.open .lightbox-nav,
