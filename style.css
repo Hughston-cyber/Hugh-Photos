@@ -334,3 +334,29 @@ nav a.active::after {
     transition: none;
   }
 }
+
+
+/* GALLERY HEADING */
+.gallery-heading {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2.5vw, 40px) 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.gallery-heading span:first-child {
+  color: #f4f4f1;
+}
+@media (max-width: 520px) {
+  .gallery-heading {
+    padding: 0 10px 16px;
+    font-size: 8px;
+  }
+}
