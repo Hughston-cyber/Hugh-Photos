@@ -292,3 +292,42 @@ nav a.active::after {
     animation: none;
   }
 }
+
+
+/* LIGHTBOX OPEN/CLOSE ANIMATION */
+.lightbox {
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.lightbox.open {
+  opacity: 1;
+}
+.lightbox img {
+  transform: scale(.94);
+  opacity: 0;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+}
+.lightbox.open img {
+  transform: scale(1);
+  opacity: 1;
+}
+.lightbox-close,
+.lightbox-nav,
+#lightbox-info {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.lightbox.open .lightbox-close,
+.lightbox.open .lightbox-nav,
+.lightbox.open #lightbox-info {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox img,
+  .lightbox-close,
+  .lightbox-nav,
+  #lightbox-info {
+    transition: none;
+  }
+}
