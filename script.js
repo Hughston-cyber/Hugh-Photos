@@ -76,3 +76,19 @@ document.addEventListener("keydown", (event) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+
+
+/* Subtle fade-in without moving page content */
+const revealItems = document.querySelectorAll(".intro, .gallery, .about, .contact, footer");
+revealItems.forEach((item) => item.classList.add("reveal"));
+
+const fadeObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+
+revealItems.forEach((item) => fadeObserver.observe(item));
