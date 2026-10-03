@@ -452,3 +452,51 @@ nav a.active::after {
     transition: none;
   }
 }
+
+
+/* FEATURED FRAME */
+.featured-frame {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 110px clamp(24px, 5vw, 72px) 130px;
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(280px, .48fr);
+  gap: clamp(45px, 7vw, 100px);
+  align-items: center;
+}
+.featured-frame-image {
+  width: 100%;
+  max-width: 620px;
+  justify-self: center;
+  overflow: hidden;
+}
+.featured-frame-image img {
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: contain;
+  display: block;
+}
+.featured-frame-copy { max-width: 430px; }
+.featured-frame-copy h2 {
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  margin-bottom: 25px;
+}
+.featured-frame-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .featured-frame {
+    grid-template-columns: 1fr;
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+  .featured-frame-image { max-width: 560px; }
+  .featured-frame-copy { max-width: 560px; }
+}
