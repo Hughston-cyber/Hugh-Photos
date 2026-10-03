@@ -686,8 +686,8 @@ footer {
 .error-image {
   position: absolute;
   z-index: 0;
-  width: 96%;
-  height: 96%;
+  width: 125%;
+  height: 125%;
   object-fit: cover;
   object-position: center;
 }
