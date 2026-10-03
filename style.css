@@ -197,7 +197,11 @@ footer { width: 100%; border-top: 1px solid var(--line); padding: 28px clamp(24p
 #lightbox-info { position: absolute; left: 25px; bottom: 20px; color: #aaa; font-size: 11px; letter-spacing: .12em; line-height: 1.7; text-transform: uppercase; display: flex; flex-direction: column; gap: 2px; }
 #lightbox-info p { position: static; margin: 0; }
 #lightbox-info #lightbox-caption { color: #fff; font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
-.lightbox-close { position: absolute; right: 22px; top: 14px; background: none; border: 0; color: #fff; font-size: 40px; font-weight: 200; cursor: pointer; }
+.lightbox-close { position: absolute; right: 22px; top: 14px; background: none; border: 0; color: #fff; font-size: 40px; font-weight: 200; cursor: pointer; z-index: 3; }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; display: grid; place-items: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 50%; color: #fff; font-size: 38px; font-weight: 200; line-height: 1; cursor: pointer; z-index: 3; transition: background .2s, border-color .2s, transform .2s; }
+.lightbox-nav:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.35); }
+.lightbox-prev { left: 22px; }
+.lightbox-next { right: 22px; }
 
 /* TABLET */
 @media (max-width: 800px) {
@@ -242,6 +246,9 @@ footer { width: 100%; border-top: 1px solid var(--line); padding: 28px clamp(24p
   #lightbox-info { left: 15px; right: 15px; bottom: 18px; font-size: 9px; }
   #lightbox-info #lightbox-caption { font-size: 13px; }
   .lightbox-close { right: 12px; top: 8px; font-size: 34px; }
+  .lightbox-nav { width: 42px; height: 42px; font-size: 30px; }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
 }
 
 /* 404 PAGE */
